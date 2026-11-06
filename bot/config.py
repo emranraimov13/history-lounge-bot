@@ -25,7 +25,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
 ADMIN_IDS = _parse_ids(os.getenv("ADMIN_IDS", ""))
 
 # Имя бота в Telegram (не username). Устанавливается при каждом запуске.
-BOT_NAME = os.getenv("BOT_NAME", "History Lounge").strip()
+BOT_NAME = os.getenv("BOT_NAME", "History отзывы").strip()
 
 DATA_DIR = BASE_DIR / "data"
 DB_PATH = DATA_DIR / "reviews.db"

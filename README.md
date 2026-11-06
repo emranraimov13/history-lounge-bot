@@ -24,13 +24,13 @@ cd ~/Desktop/history-lounge-bot
 - Статистика, список отзывов и экспорт CSV — в `/admin`.
 - Ссылка на сайт, меню, акции и бонусную программу — кнопка «🌐 Сайт»
   в меню и команда `/site`.
-- Имя бота — **History Lounge**, описание и список команд
+- Имя бота — **History отзывы**, описание и список команд
   устанавливаются при запуске автоматически.
 
 Имя можно поменять в `bot/config.py` (`BOT_NAME`) или через `.env`:
 
 ```env
-BOT_NAME=History Lounge
+BOT_NAME=History отзывы
 ```
 
 Username (`@loungeHistory_bot`) меняется только в @BotFather командой `/setusername`.
