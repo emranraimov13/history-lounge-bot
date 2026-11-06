@@ -72,6 +72,37 @@ ADMIN_IDS=123456789
 Оригинал текущей картинки лежит в `assets/welcome_original.png`,
 рабочая версия для бота — `assets/welcome.jpg` (1080×1080).
 
+## QR-карточки на стол
+
+Два варианта в спокойной болотно-коричневой гамме. В обоих QR находится
+по центру, логотип — сверху, призыв оставить отзыв — снизу.
+
+### Тёмный вариант
+
+| Файл | Назначение |
+|---|---|
+| `assets/qr_table_stand_a5.pdf` | Печать в типографии: A5, вылеты 3 мм, 600 dpi |
+| `assets/qr_table_stand_a5.png` | Превью и печать: A5, 300 dpi |
+| `assets/qr_table_stand_mockup.jpg` | Макет для согласования |
+| `assets/qr_history_lounge.png` | Квадратный QR 2400×2400 для соцсетей |
+
+### Светлый вариант
+
+| Файл | Назначение |
+|---|---|
+| `assets/qr_table_stand_a5_light.pdf` | Печать в типографии: A5, вылеты 3 мм, 600 dpi |
+| `assets/qr_table_stand_a5_light.png` | Превью и печать: A5, 300 dpi |
+| `assets/qr_table_stand_mockup_light.jpg` | Макет для согласования |
+
+Рекомендации: бумага 300–350 г/м², матовая ламинация soft-touch,
+акриловая подставка A5. QR ведёт на [@loungeHistory_bot](https://t.me/loungeHistory_bot).
+
+Пересобрать все файлы:
+
+```bash
+.venv/bin/python tools/make_qr.py
+```
+
 ## Информация о ресторане
 
 Откройте `bot/config.py` и заполните блок `RESTAURANT`:
