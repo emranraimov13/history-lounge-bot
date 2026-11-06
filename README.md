@@ -22,16 +22,32 @@ cd ~/Desktop/history-lounge-bot
 - Приветствие, картинка `assets/welcome.jpg`, меню и кнопки.
 - Отзывы сохраняются в `data/reviews.db`, дублируются админам в Telegram.
 - Статистика, список отзывов и экспорт CSV — в `/admin`.
-- Имя бота — **History отзывы**, описание и список команд
+- Ссылка на сайт, меню, акции и бонусную программу — кнопка «🌐 Сайт»
+  в меню и команда `/site`.
+- Имя бота — **History Lounge**, описание и список команд
   устанавливаются при запуске автоматически.
 
 Имя можно поменять в `bot/config.py` (`BOT_NAME`) или через `.env`:
 
 ```env
-BOT_NAME=History отзывы
+BOT_NAME=History Lounge
 ```
 
 Username (`@loungeHistory_bot`) меняется только в @BotFather командой `/setusername`.
+
+## Сайт ресторана
+
+Официальный сайт — [historylounge.app](https://historylounge.app).
+
+- Кнопка «🌐 Сайт» в главном меню сразу открывает сайт.
+- Команда `/site` показывает, что есть на сайте: меню с ценами, акции,
+  бонусная программа с кэшбэком 5–15% и личный кабинет.
+- В разделе «О ресторане» есть ссылка на сайт и кнопки «Меню и цены»,
+  «Бонусы».
+
+Ссылки задаются в `bot/config.py` в блоке `RESTAURANT`:
+`site_url`, `site_menu_url`, `site_promotions_url`, `site_loyalty_url`,
+`site_account_url`.
 
 ## Админ-доступ
 
@@ -69,7 +85,11 @@ RESTAURANT = {
     "phone": "+998 77 131-11-11",
     "instagram": "https://www.instagram.com/history.lounge/",
     "map_url": "https://yandex.uz/maps/-/CDVgiMZa",
-    "site_url": "",
+    "site_url": "https://historylounge.app",
+    "site_menu_url": "https://historylounge.app/menu",
+    "site_promotions_url": "https://historylounge.app/promotions",
+    "site_loyalty_url": "https://historylounge.app/loyalty",
+    "site_account_url": "https://historylounge.app/account",
 }
 ```
 

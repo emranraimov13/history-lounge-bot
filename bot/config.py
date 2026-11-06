@@ -25,7 +25,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
 ADMIN_IDS = _parse_ids(os.getenv("ADMIN_IDS", ""))
 
 # Имя бота в Telegram (не username). Устанавливается при каждом запуске.
-BOT_NAME = os.getenv("BOT_NAME", "History отзывы").strip()
+BOT_NAME = os.getenv("BOT_NAME", "History Lounge").strip()
 
 DATA_DIR = BASE_DIR / "data"
 DB_PATH = DATA_DIR / "reviews.db"
@@ -37,6 +37,8 @@ WELCOME_IMAGE = ASSETS_DIR / "welcome.jpg"
 # Заполните нужные поля — бот покажет только то, что указано.
 # Пустые строки просто не попадут в сообщение.
 # ---------------------------------------------------------------------------
+SITE_URL = "https://historylounge.app"
+
 RESTAURANT = {
     "name": "History Lounge",
     "tagline": "ресторан · лаунж-бар",
@@ -45,7 +47,11 @@ RESTAURANT = {
     "phone": "+998 77 131-11-11",
     "instagram": "https://www.instagram.com/history.lounge/",
     "map_url": "https://yandex.uz/maps/-/CDVgiMZa",
-    "site_url": "",
+    "site_url": SITE_URL,
+    "site_menu_url": f"{SITE_URL}/menu",
+    "site_promotions_url": f"{SITE_URL}/promotions",
+    "site_loyalty_url": f"{SITE_URL}/loyalty",
+    "site_account_url": f"{SITE_URL}/account",
 }
 
 

@@ -11,15 +11,47 @@ def main_menu(user_id: int) -> InlineKeyboardMarkup:
     builder.button(text="⭐ Оставить отзыв", callback_data="m:review")
     builder.button(text="ℹ️ О ресторане", callback_data="m:about")
     builder.button(text="📝 Мои отзывы", callback_data="m:my")
+    if config.RESTAURANT.get("site_url"):
+        builder.button(text="🌐 Сайт", url=config.RESTAURANT["site_url"])
     if config.RESTAURANT.get("map_url"):
         builder.button(text="📍 Мы на карте", url=config.RESTAURANT["map_url"])
     if config.RESTAURANT.get("instagram"):
         builder.button(text="📸 Instagram", url=config.RESTAURANT["instagram"])
-    if config.RESTAURANT.get("site_url"):
-        builder.button(text="🌐 Сайт", url=config.RESTAURANT["site_url"])
     if config.is_admin(user_id):
         builder.button(text="🛠 Админ-панель", callback_data="adm:panel")
-    builder.adjust(1, 2, 1, 1, 1)
+    builder.adjust(1, 2, 1, 2, 1)
+    return builder.as_markup()
+
+
+def about_kb() -> InlineKeyboardMarkup:
+    builder = InlineKeyboardBuilder()
+    if config.RESTAURANT.get("site_url"):
+        builder.button(text="🌐 Открыть сайт", url=config.RESTAURANT["site_url"])
+    if config.RESTAURANT.get("site_menu_url"):
+        builder.button(text="🍽 Меню и цены", url=config.RESTAURANT["site_menu_url"])
+    if config.RESTAURANT.get("site_loyalty_url"):
+        builder.button(text="💎 Бонусы", url=config.RESTAURANT["site_loyalty_url"])
+    builder.button(text="⬅️ В меню", callback_data="m:menu")
+    builder.adjust(1, 2, 1)
+    return builder.as_markup()
+
+
+def site_kb() -> InlineKeyboardMarkup:
+    builder = InlineKeyboardBuilder()
+    if config.RESTAURANT.get("site_url"):
+        builder.button(text="🌐 Открыть сайт", url=config.RESTAURANT["site_url"])
+    if config.RESTAURANT.get("site_menu_url"):
+        builder.button(text="🍽 Меню и цены", url=config.RESTAURANT["site_menu_url"])
+    if config.RESTAURANT.get("site_promotions_url"):
+        builder.button(text="🎁 Акции", url=config.RESTAURANT["site_promotions_url"])
+    if config.RESTAURANT.get("site_loyalty_url"):
+        builder.button(text="💎 Бонусы", url=config.RESTAURANT["site_loyalty_url"])
+    if config.RESTAURANT.get("site_account_url"):
+        builder.button(
+            text="👤 Личный кабинет", url=config.RESTAURANT["site_account_url"]
+        )
+    builder.button(text="⬅️ В меню", callback_data="m:menu")
+    builder.adjust(1, 2, 2, 1)
     return builder.as_markup()
 
 

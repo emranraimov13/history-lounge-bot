@@ -74,7 +74,13 @@ async def cmd_review(message: Message, state: FSMContext) -> None:
 @router.message(Command("about"))
 async def cmd_about(message: Message, state: FSMContext) -> None:
     await state.clear()
-    await message.answer(texts.about_text(), reply_markup=keyboards.back_menu_kb())
+    await message.answer(texts.about_text(), reply_markup=keyboards.about_kb())
+
+
+@router.message(Command("site"))
+async def cmd_site(message: Message, state: FSMContext) -> None:
+    await state.clear()
+    await message.answer(texts.site_text(), reply_markup=keyboards.site_kb())
 
 
 @router.message(Command("cancel"))
@@ -101,6 +107,7 @@ async def cmd_help(message: Message, state: FSMContext) -> None:
         "🍂 <b>Бот History Lounge</b>\n\n"
         "/review — оставить отзыв\n"
         "/about — о ресторане\n"
+        "/site — сайт, меню и бонусы\n"
         "/menu — главное меню\n"
         "/cancel — отменить действие\n"
         "/myid — ваш Telegram ID\n\n"
@@ -127,7 +134,7 @@ async def cb_about(callback: CallbackQuery, state: FSMContext) -> None:
     await replace_text(
         callback.message,
         texts.about_text(),
-        keyboards.back_menu_kb(),
+        keyboards.about_kb(),
     )
 
 

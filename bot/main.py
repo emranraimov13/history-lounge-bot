@@ -24,6 +24,7 @@ DEFAULT_COMMANDS = [
     BotCommand(command="start", description="Главное меню"),
     BotCommand(command="review", description="Оставить отзыв"),
     BotCommand(command="about", description="О ресторане"),
+    BotCommand(command="site", description="Сайт, меню и бонусы"),
     BotCommand(command="myid", description="Мой Telegram ID"),
     BotCommand(command="help", description="Помощь"),
 ]
@@ -39,9 +40,12 @@ DESCRIPTION = (
     "🍂 History Lounge — ресторан, лаунж и бар.\n\n"
     "Оставьте отзыв о визите: оцените кухню, сервис и атмосферу. "
     "Мы читаем каждое сообщение и используем его, чтобы становиться лучше.\n\n"
+    "🌐 Меню, акции и бонусы — на historylounge.app.\n\n"
     "Нажмите «Запустить», чтобы начать."
 )
-SHORT_DESCRIPTION = "Отзывы гостей History Lounge — помогите нам стать лучше."
+SHORT_DESCRIPTION = (
+    "Отзывы гостей History Lounge. Меню, акции и бонусы — на historylounge.app."
+)
 
 
 def setup_logging() -> None:

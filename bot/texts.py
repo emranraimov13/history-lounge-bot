@@ -41,6 +41,12 @@ def about_text() -> str:
         details.append(f"📍 <b>Адрес:</b> {esc(RESTAURANT['address'])}")
     if RESTAURANT.get("phone"):
         details.append(f"📞 <b>Телефон:</b> {esc(RESTAURANT['phone'])}")
+    site_url = RESTAURANT.get("site_url", "")
+    if site_url:
+        details.append(
+            f'🌐 <b>Сайт:</b> <a href="{esc(site_url)}">historylounge.app</a> — '
+            "меню с ценами, акции и бонусы"
+        )
     if details:
         lines.extend(details)
     else:
@@ -57,6 +63,32 @@ def about_text() -> str:
         ]
     )
     return "\n".join(lines)
+
+
+def site_text() -> str:
+    site_url = RESTAURANT.get("site_url", "")
+    site_link = (
+        f'<a href="{esc(site_url)}">historylounge.app</a>'
+        if site_url
+        else "historylounge.app"
+    )
+    return (
+        "🌐 <b>Наш сайт</b>\n\n"
+        f"{site_link} — официальный сайт History Lounge. "
+        "Там собрано всё о меню, акциях и бонусах.\n\n"
+        "<b>Что есть на сайте</b>\n"
+        "🍽 <b>Меню</b> — актуальные цены на кухню, бар и кальяны\n"
+        "🎁 <b>Акции</b> — специальные предложения ресторана\n"
+        "💎 <b>Бонусы</b> — кэшбэк от 5% до 15% за визиты\n"
+        "👤 <b>Личный кабинет</b> — вход по номеру телефона и SMS-коду\n\n"
+        "<b>Бонусная программа</b>\n"
+        "Чем больше сумма покупок, тем выше уровень и процент кэшбэка:\n"
+        "Bronze — 5% · Silver — 7% · Gold — 9%\n"
+        "Platinum — 12% · Diamond — 15%\n\n"
+        "Бонусы начисляются за покупки в заведении и хранятся в профиле. "
+        "Актуальные цены всегда на сайте — в узбекских сумах.\n\n"
+        "Выберите раздел 👇"
+    )
 
 
 def rating_prompt() -> str:
